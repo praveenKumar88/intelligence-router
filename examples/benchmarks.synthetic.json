@@ -1,0 +1,48 @@
+{
+  "kind": "synthetic",
+  "note": "Invented teaching fixtures; not measured model performance.",
+  "results": [
+    {
+      "id": "cheap",
+      "task_family": "support_classification",
+      "quality": 0.9,
+      "reliability": 0.995,
+      "latency_p95_ms": 200,
+      "cost_usd_per_task": 0.001,
+      "execution": {
+        "model": "fictional-cheap",
+        "reasoning_budget": "low",
+        "tools": [],
+        "agent": false
+      }
+    },
+    {
+      "id": "balanced",
+      "task_family": "support_classification",
+      "quality": 0.96,
+      "reliability": 0.995,
+      "latency_p95_ms": 800,
+      "cost_usd_per_task": 0.004,
+      "execution": {
+        "model": "fictional-balanced",
+        "reasoning_budget": "low",
+        "tools": [],
+        "agent": false
+      }
+    },
+    {
+      "id": "strong",
+      "task_family": "support_classification",
+      "quality": 0.98,
+      "reliability": 0.995,
+      "latency_p95_ms": 1400,
+      "cost_usd_per_task": 0.02,
+      "execution": {
+        "model": "fictional-strong",
+        "reasoning_budget": "high",
+        "tools": [],
+        "agent": false
+      }
+    }
+  ]
+}

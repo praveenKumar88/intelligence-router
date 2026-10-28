@@ -1,0 +1,10 @@
+{
+  "description": "Classify support messages into a fixed label set.",
+  "task_family": "support_classification",
+  "requirements": {
+    "min_quality": 0.95,
+    "min_reliability": 0.99,
+    "max_latency_p95_ms": 1500,
+    "required_tools": []
+  }
+}
