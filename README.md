@@ -38,12 +38,14 @@ Real evaluation must record model/version, dataset split, sample size, date, tok
 
 Create 20–50 labeled tasks in one narrow domain (start with text classification), run two actual models on the same held-out cases, and replace the synthetic fixtures with measured results. Then test whether routing improves cost at the required quality. Natural-language extraction comes after the structured contract works, with user review of ambiguous requirements.
 
-## Publish
+## Repository
 
-Target: `praveenKumar88/intelligence-router` (public). This local repository is ready for an initial push. Once GitHub CLI is installed and signed in, run from this folder:
+Public repository: [praveenKumar88/intelligence-router](https://github.com/praveenKumar88/intelligence-router).
 
 ```sh
-gh repo create praveenKumar88/intelligence-router --public --source=. --remote=origin --push
+git clone https://github.com/praveenKumar88/intelligence-router.git
+cd intelligence-router
+python3 -m unittest discover -s tests -v
 ```
 
 Do not put API keys, private prompts, or datasets in commits. Store credentials in your environment. No license has been selected yet.

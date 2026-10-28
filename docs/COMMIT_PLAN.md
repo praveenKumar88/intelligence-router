@@ -73,6 +73,6 @@ For course exercises, use `learning/llm/` and `learning/reasoning/`; reference u
 
 ## Current status
 
-Completed locally: synthetic configuration selector, four tests, CI definition, learning roadmap, and attributed research notes. No real provider calls or measured model comparison yet. GitHub publication is still pending authenticated access to `praveenKumar88/intelligence-router`.
+Completed locally: synthetic configuration selector, four tests, CI definition, learning roadmap, and attributed research notes. No real provider calls or measured model comparison yet. Published at [praveenKumar88/intelligence-router](https://github.com/praveenKumar88/intelligence-router).
 
 Next implementation: commit 1, a support-classification dataset and rubric. Then build the fake adapter so development can continue before choosing providers or paying for inference.
