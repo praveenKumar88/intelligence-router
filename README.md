@@ -15,7 +15,7 @@ python3 -m unittest discover -s tests -v
 
 This first milestone selects the cheapest feasible configuration from **synthetic benchmark summaries** for one task family. It does not call models, parse natural-language requirements, or demonstrate real performance. Unknown task families and infeasible constraints return `needs_evaluation`, never an invented recommendation. JSON output is the first machine-readable Intelligence Configuration.
 
-Read [the roadmap](docs/ROADMAP.md) and keep [a learning journal](docs/LEARNING_LOG.md). Build one small experiment after each course topic. Course exercises belong under `learning/`; router experiments stay separate so this remains usable while you learn.
+Read [the research ideas](docs/RESEARCH.md), [the roadmap](docs/ROADMAP.md) and keep [a learning journal](docs/LEARNING_LOG.md). Build one small experiment after each course topic. Course exercises belong under `learning/`; router experiments stay separate so this remains usable while you learn.
 
 ## Learning resources
 
