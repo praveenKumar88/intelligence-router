@@ -34,15 +34,22 @@ A benchmark row describes a complete configuration evaluated on a particular tas
 
 Real evaluation must record model/version, dataset split, sample size, date, token counts, prices, actual tool costs, and uncertainty. Keep training and held-out evaluation tasks separate. Compare against always-cheap and always-strong baselines, including router overhead. Never use model self-confidence as calibrated correctness.
 
-## Dataset and next milestone
+## Train and run the CPU router
 
-Prepare the pinned Hugging Face routing dataset:
+The learned baseline predicts `small_model` or `big_model` from prompt text. It imitates the source dataset's routing policy; it does not execute downstream models.
 
 ```sh
-python3 scripts/prepare_dataset.py
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-training.txt
+.venv/bin/python scripts/prepare_dataset.py
+.venv/bin/python scripts/train_baseline.py
+.venv/bin/python scripts/predict_route.py "Write a short thank-you email."
+.venv/bin/python -m unittest discover -s tests -v
 ```
 
-See [preparation and attribution](data/README.md) and the [audit report](reports/dataset-audit.md). This is a prompt-to-route bootstrap dataset with rule-based labels. The next implementation is a CPU text-classification baseline trained on `prompt` to predict `label`; no classifier is trained yet. Later, run actual candidate models to establish measured quality/cost/latency routing labels. The synthetic selector above remains a separate configuration-selection demonstration.
+See [dataset preparation and attribution](data/README.md), the [dataset audit](reports/dataset-audit.md), and the [baseline evaluation](reports/baseline-evaluation.md). Training selects among six configurations by development macro F1, then evaluates the winner on test. Model files stay local in `models/`; the report and dependency pins are tracked.
+
+Next: measure real candidate models to establish quality, cost, and latency labels. The synthetic selector above remains a separate configuration-selection demonstration. Neither experiment establishes production readiness.
 
 ## Repository
 

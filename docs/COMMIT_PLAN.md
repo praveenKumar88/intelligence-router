@@ -80,3 +80,7 @@ Completed locally: synthetic configuration selector, four tests, CI definition, 
 The initial support-classification dataset proposal is superseded by the user-selected SupraLabs prompt-routing dataset. Completed: revision-pinned download, checksum verification, schema audit, normalized deduplication, deterministic stratified splits, and audit report. See `data/README.md`.
 
 Next implementation: TF-IDF + logistic regression on prompt text, predicting the source small/big routing label. Fit preprocessing on train only; tune on dev; report held-out per-class metrics against the majority baseline. This measures policy imitation. Real model outcome evaluation remains required before production claims.
+
+## CPU baseline implemented
+
+TF-IDF and logistic regression now train on the prepared train split; six fixed configurations are selected using dev macro F1. The selected model is evaluated on test against always-big and always-small policies. See `reports/baseline-evaluation.md`. Prediction is available through `scripts/predict_route.py`. Real model outcome evaluation remains the next stage.
