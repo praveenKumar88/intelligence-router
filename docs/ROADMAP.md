@@ -26,4 +26,4 @@ Later: agent loops, retrieval, hosted vs local execution, quantization, hardware
 
 ## Next session
 
-Pick the first text-classification domain, define the label set and acceptable errors, collect examples, and choose two models available to you. Do not assume a tiny dataset establishes a 99% accuracy guarantee.
+The user selected SupraLabs/Prompt-Routing-Dataset for the first prompt-routing baseline. Preparation and auditing are implemented; see `data/README.md` and `reports/dataset-audit.md`. Next, train a CPU classifier and compare per-class performance with the majority baseline. The source labels imitate a rule; real model comparisons are still required for cost/quality claims.

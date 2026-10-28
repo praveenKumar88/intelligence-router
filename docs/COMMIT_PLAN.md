@@ -75,4 +75,8 @@ For course exercises, use `learning/llm/` and `learning/reasoning/`; reference u
 
 Completed locally: synthetic configuration selector, four tests, CI definition, learning roadmap, and attributed research notes. No real provider calls or measured model comparison yet. Published at [praveenKumar88/intelligence-router](https://github.com/praveenKumar88/intelligence-router).
 
-Next implementation: commit 1, a support-classification dataset and rubric. Then build the fake adapter so development can continue before choosing providers or paying for inference.
+## Updated first milestone
+
+The initial support-classification dataset proposal is superseded by the user-selected SupraLabs prompt-routing dataset. Completed: revision-pinned download, checksum verification, schema audit, normalized deduplication, deterministic stratified splits, and audit report. See `data/README.md`.
+
+Next implementation: TF-IDF + logistic regression on prompt text, predicting the source small/big routing label. Fit preprocessing on train only; tune on dev; report held-out per-class metrics against the majority baseline. This measures policy imitation. Real model outcome evaluation remains required before production claims.

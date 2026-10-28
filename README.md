@@ -34,9 +34,15 @@ A benchmark row describes a complete configuration evaluated on a particular tas
 
 Real evaluation must record model/version, dataset split, sample size, date, token counts, prices, actual tool costs, and uncertainty. Keep training and held-out evaluation tasks separate. Compare against always-cheap and always-strong baselines, including router overhead. Never use model self-confidence as calibrated correctness.
 
-## Next milestone
+## Dataset and next milestone
 
-Create 20–50 labeled tasks in one narrow domain (start with text classification), run two actual models on the same held-out cases, and replace the synthetic fixtures with measured results. Then test whether routing improves cost at the required quality. Natural-language extraction comes after the structured contract works, with user review of ambiguous requirements.
+Prepare the pinned Hugging Face routing dataset:
+
+```sh
+python3 scripts/prepare_dataset.py
+```
+
+See [preparation and attribution](data/README.md) and the [audit report](reports/dataset-audit.md). This is a prompt-to-route bootstrap dataset with rule-based labels. The next implementation is a CPU text-classification baseline trained on `prompt` to predict `label`; no classifier is trained yet. Later, run actual candidate models to establish measured quality/cost/latency routing labels. The synthetic selector above remains a separate configuration-selection demonstration.
 
 ## Repository
 
